@@ -1,7 +1,16 @@
-function isPalindrome(word) {
+function reverse(word) {
   // Write your algorithm here
+  return word.split("").reverse().join("");
 }
 
+function isPalindrome(word) {
+  const reversedWord = reverse(word);
+
+  return word === reversedWord;
+}
+
+
+  // return word === reversedWord;
 /* 
   Add your pseudocode here
 */
@@ -20,6 +29,16 @@ if (require.main === module) {
 
   console.log("Expecting: false");
   console.log("=>", isPalindrome("robot"));
+
+  console.log("");
+
+  console.log("Expecting: true");
+  console.log("=>", isPalindrome("a"));
+
+  console.log("");
+
+  console.log("Expecting: true");
+  console.log("=>", isPalindrome(""));
 }
 
 module.exports = isPalindrome;
